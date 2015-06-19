@@ -7,7 +7,10 @@ use Monarkee\Bumble\Repositories\ModelRepository;
 
 class MasterComposer
 {
+
     /**
+     * The Model repository
+     *
      * @var
      */
     private $modelRepo;
