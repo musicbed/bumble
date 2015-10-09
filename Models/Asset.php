@@ -7,6 +7,9 @@ class Asset extends Model
 {
     use SoftDeletes;
 
+    /**
+     *
+     */
     public function getUrl()
     {
         // return url(config('bumble.admin_prefix') . '/cache/' . $this->attributes['location'] . '/' . $this->attributes['image']);
@@ -24,5 +27,19 @@ class Asset extends Model
         $params = http_build_query($params);
 
         // return url(config('bumble.admin_prefix') . '/cache/' . $this->attributes['location'] . '/' . $this->attributes['image'].'?'.$params);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTable()
+    {
+        $table = config('bumble.assets-table');
+
+        if (empty($table)) {
+            return 'assets';
+        }
+
+        return $table;
     }
 }
