@@ -6,4 +6,5 @@ composer.phar
 composer.lock
 .DS_Store
 .sass-cache
+bin
 .idea
