@@ -3,8 +3,9 @@
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Asset extends Model
+class Asset extends BumbleModel
 {
+
     use SoftDeletes;
 
     /**
