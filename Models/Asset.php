@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 class Asset extends BumbleModel
 {
 
-    use SoftDeletes;
-
     /**
      *
      */
