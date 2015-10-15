@@ -1,12 +1,16 @@
 <?php namespace Monarkee\Bumble\Composers;
 
 use Illuminate\Http\Request;
+use Monarkee\Bumble\Models\Asset;
 use Monarkee\Bumble\Presenters\UserPresenter;
 use Monarkee\Bumble\Repositories\ModelRepository;
 
 class MasterComposer
 {
+
     /**
+     * The Model repository
+     *
      * @var
      */
     private $modelRepo;
@@ -27,6 +31,7 @@ class MasterComposer
 
         // Register the logged-in user and decorate it with special methods
         $authUser = new UserPresenter($this->request->user());
+        $view->with('bumbleAssets', Asset::all());
         $view->with('authUser', $authUser);
 
         $view->with('topModels', $this->modelRepo->getModels());
