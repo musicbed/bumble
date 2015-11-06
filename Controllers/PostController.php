@@ -147,7 +147,7 @@ class PostController extends BumbleController
             return Redirect::back()->withInput()->withErrors($e->getErrors());
         }
 
-        return Redirect::route($this->config->get('bumble.admin_prefix').'.'.$segment.'.index')
+        return Redirect::route($this->config->get('bumble.admin_prefix').'.'.$segment.'.edit', $id)
                                             ->with('success', 'The entry was successfully updated.');
     }
 
