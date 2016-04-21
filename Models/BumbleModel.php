@@ -48,7 +48,8 @@ abstract class BumbleModel extends Model
     {
         parent::__construct($attributes);
 
-        $this->checkIfTableExists();
+//        @TODO temp remove 
+//        $this->checkIfTableExists();
 
         // Set up the model's fieldset by going to the config
         // and spinning up the class
