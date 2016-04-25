@@ -1,6 +1,6 @@
 <?php
 
-Route::filter('bumble_auth', function()
+Route::middleware('bumble_auth', function()
 {
     if (Auth::guest()) return Redirect::guest(route('bumble.login'));
 });
