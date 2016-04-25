@@ -20,6 +20,7 @@ class AssetSourceRepository
         // Get the asset sources from the config
         $sources = config('bumble.asset_sources');
 
+        $sourceValues = [];
         foreach ($sources as $name => $source)
         {
             if (isset($source['name']))
