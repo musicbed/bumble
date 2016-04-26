@@ -30,9 +30,13 @@ class MasterComposer
         $view->with('jsAssets', $jsAssets);
 
         // Register the logged-in user and decorate it with special methods
-        $authUser = new UserPresenter($this->request->user());
-        $view->with('bumbleAssets', Asset::all());
+        $authUser = null;
+        if ($user = $this->request->user())
+        {
+            $authUser = new UserPresenter($this->request->user());
+        }
         $view->with('authUser', $authUser);
+        $view->with('bumbleAssets', Asset::all());
 
         $view->with('topModels', $this->modelRepo->getModels());
     }
