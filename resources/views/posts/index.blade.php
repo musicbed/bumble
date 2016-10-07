@@ -17,7 +17,7 @@
         @if ($model->admin()->isSearchable())
             <div class="header">
                 {!! Form::open(['method' => 'get', 'route' => [config('bumble.admin_prefix').'.'.$model->getPluralSlug().'.index']]) !!}
-                {!! Form::textField('query', null, null, ['class' => 'full input ft2 tcg90 input--44 bgg05 mb2']) !!}
+                {!! Form::textField('query', null, \Input::get('query'), ['class' => 'full input ft2 tcg90 input--44 bgg05 mb2']) !!}
                 {!! Form::button('Search', ['type' => 'submit', 'class' => '']) !!}
                 {!! Form::close() !!}
             </div>
