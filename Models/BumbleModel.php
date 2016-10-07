@@ -10,9 +10,12 @@ use Str;
 use Config;
 use App;
 use Request;
+use Sofa\Eloquence\Eloquence;
 
 abstract class BumbleModel extends Model
 {
+    use Eloquence;
+
     /**
      * If not in the admin, boot the traits of the model
      *
@@ -48,7 +51,7 @@ abstract class BumbleModel extends Model
     {
         parent::__construct($attributes);
 
-//        @TODO temp remove 
+//        @TODO temp remove
 //        $this->checkIfTableExists();
 
         // Set up the model's fieldset by going to the config
@@ -358,5 +361,29 @@ abstract class BumbleModel extends Model
     public static function enableTraits()
     {
         return static::$enableTraits;
+    }
+
+    /**
+     * Is Model searchable
+     *
+     * @var bool
+     */
+    protected $searchable = false;
+
+    /**
+     * Searchable columns
+     *
+     * @var array
+     */
+    protected $searchableColumns = [];
+
+    /**
+     * Is model searchable
+     *
+     * @return bool
+     */
+    public function isSearchable()
+    {
+        return (bool) $this->searchable;
     }
 }
