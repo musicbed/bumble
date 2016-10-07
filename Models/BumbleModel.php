@@ -364,26 +364,9 @@ abstract class BumbleModel extends Model
     }
 
     /**
-     * Is Model searchable
-     *
-     * @var bool
-     */
-    protected $searchable = false;
-
-    /**
      * Searchable columns
      *
      * @var array
      */
     protected $searchableColumns = [];
-
-    /**
-     * Is model searchable
-     *
-     * @return bool
-     */
-    public function isSearchable()
-    {
-        return (bool) $this->searchable;
-    }
 }

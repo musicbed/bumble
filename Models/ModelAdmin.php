@@ -73,6 +73,13 @@ class ModelAdmin
     protected $fieldset;
 
     /**
+     * Is Model searchable
+     *
+     * @var bool
+     */
+    protected $searchable = false;
+
+    /**
      * Create a new ModelAdmin object
      */
     public function __construct()
@@ -162,6 +169,16 @@ class ModelAdmin
     public function getIdColumn()
     {
         return isset($this->idColumn) ? $this->idColumn : 'id';
+    }
+
+    /**
+     * Is model searchable
+     *
+     * @return bool
+     */
+    public function isSearchable()
+    {
+        return (bool) $this->searchable;
     }
 
 //    public function getField($key)

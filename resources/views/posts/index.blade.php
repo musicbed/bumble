@@ -14,7 +14,7 @@
             <a href="{{ route(config('bumble.admin_prefix') . '.' . $model->getPluralSlug() . '.create') }}" class="btn-create">Create {{{ str_singular($model->getModelName()) }}} &#8594;</a>
         </div>
 
-        @if ($model->isSearchable())
+        @if ($model->admin()->isSearchable())
             <div class="header">
                 {!! Form::open(['method' => 'get', 'route' => [config('bumble.admin_prefix').'.'.$model->getPluralSlug().'.index']]) !!}
                 {!! Form::textField('query', null, null, ['class' => 'full input ft2 tcg90 input--44 bgg05 mb2']) !!}
