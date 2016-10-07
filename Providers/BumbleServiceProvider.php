@@ -75,6 +75,8 @@ class BumbleServiceProvider extends ServiceProvider {
     {
         $this->app->singleton('assetLoader', 'Monarkee\Bumble\Repositories\FieldAssetRepository');
 
+        $this->app->register('Sofa\Eloquence\ServiceProvider');
+
         $this->app->singleton('bumblestr', function ()
         {
             return $this->app->make('Monarkee\Bumble\Support\BumbleStr');
